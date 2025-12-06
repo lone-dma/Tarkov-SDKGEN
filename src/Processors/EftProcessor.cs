@@ -596,7 +596,6 @@ namespace TarkovSdkGen.Processors
                     nestedStruct.AddOffset(entity, registrationDateOffset);
                 }
 
-            end:
                 structGenerator.AddStruct(nestedStruct);
             }
 
