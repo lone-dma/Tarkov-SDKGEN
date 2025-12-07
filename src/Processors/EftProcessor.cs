@@ -566,6 +566,12 @@ namespace TarkovSdkGen.Processors
                     nestedStruct.AddOffset(entity, offset);
                 }
 
+                {
+                    entity = "QuestsData";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
                 structGenerator.AddStruct(nestedStruct);
             }
 
@@ -594,6 +600,36 @@ namespace TarkovSdkGen.Processors
                 {
                     entity = "RegistrationDate";
                     nestedStruct.AddOffset(entity, registrationDateOffset);
+                }
+
+                structGenerator.AddStruct(nestedStruct);
+            }
+
+            {
+                string name = "QuestsData";
+                const string typeName = "EFT.Quests.QuestStatusData";
+                SetVariableStatus(name);
+
+                StructureGenerator nestedStruct = new(name);
+
+                string entity;
+
+                {
+                    entity = "Id";
+                    var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                {
+                    entity = "Status";
+                    var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                {
+                    entity = "CompletedConditions";
+                    var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
                 }
 
                 structGenerator.AddStruct(nestedStruct);
