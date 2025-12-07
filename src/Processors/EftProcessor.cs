@@ -572,6 +572,30 @@ namespace TarkovSdkGen.Processors
                     nestedStruct.AddOffset(entity, offset);
                 }
 
+                {
+                    entity = "WishlistManager";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                structGenerator.AddStruct(nestedStruct);
+            }
+
+            {
+                string name = "WishlistManager";
+                const string typeName = "EFT.WishlistManager";
+                SetVariableStatus(name);
+
+                StructureGenerator nestedStruct = new(name);
+
+                string entity;
+
+                {
+                    entity = "_wishlistItems";
+                    var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
                 structGenerator.AddStruct(nestedStruct);
             }
 
