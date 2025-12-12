@@ -132,7 +132,7 @@ namespace TarkovSdkGen.Processors
                 const string className = "EFT.SynchronizableObjects.SynchronizableObjectLogicProcessor";
 
                 {
-                    entity = "_activeSynchronizableObjects";
+                    entity = "_staticSynchronizableObjects";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
                 }
@@ -201,7 +201,7 @@ namespace TarkovSdkGen.Processors
                 }
 
                 {
-                    entity = "_targetPosition";
+                    entity = "_previousPosition";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
                 }
