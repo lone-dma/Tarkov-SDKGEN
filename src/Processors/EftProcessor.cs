@@ -306,6 +306,12 @@ namespace TarkovSdkGen.Processors
                 const string className = "EFT.NextObservedPlayer.ObservedPlayerView";
 
                 {
+                    entity = "Id";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                {
                     entity = "GroupID";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
