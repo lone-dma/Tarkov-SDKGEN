@@ -312,18 +312,6 @@ namespace TarkovSdkGen.Processors
                 }
 
                 {
-                    entity = "GroupID";
-                    var offset = _dumpParser.FindOffsetByName(className, entity);
-                    nestedStruct.AddOffset(entity, offset);
-                }
-
-                {
-                    entity = "AccountId";
-                    var offset = _dumpParser.FindOffsetByName(className, entity);
-                    nestedStruct.AddOffset(entity, offset);
-                }
-
-                {
                     entity = "Voice";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
