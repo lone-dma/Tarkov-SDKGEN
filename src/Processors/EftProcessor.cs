@@ -360,6 +360,12 @@ namespace TarkovSdkGen.Processors
                 }
 
                 {
+                    entity = "HandsController";
+                    var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                {
                     entity = "PlayerView";
                     var offset = _dumpParser.FindOffsetByName(typeName, entity);
                     nestedStruct.AddOffset(entity, offset);
@@ -374,6 +380,25 @@ namespace TarkovSdkGen.Processors
                 {
                     entity = "HealthController";
                     var offset = _dumpParser.FindOffsetByName(typeName, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                structGenerator.AddStruct(nestedStruct);
+            }
+
+            {
+                string name = "ObservedPlayerHandsController";
+                SetVariableStatus(name);
+
+                StructureGenerator nestedStruct = new(name);
+
+                string entity;
+
+                const string className = "EFT.NextObservedPlayer.ObservedPlayerHandsController";
+
+                {
+                    entity = "_item";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
                 }
 
