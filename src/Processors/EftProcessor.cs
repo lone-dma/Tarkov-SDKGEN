@@ -293,12 +293,6 @@ namespace TarkovSdkGen.Processors
                 }
 
                 {
-                    entity = "RaidId";
-                    var offset = _dumpParser.FindOffsetByName(className, entity);
-                    nestedStruct.AddOffset(entity, offset);
-                }
-
-                {
                     entity = "_handsController";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
