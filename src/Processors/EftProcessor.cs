@@ -298,6 +298,12 @@ namespace TarkovSdkGen.Processors
                     nestedStruct.AddOffset(entity, offset);
                 }
 
+                {
+                    entity = "GameWorld";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
                 structGenerator.AddStruct(nestedStruct);
             }
 
@@ -846,6 +852,25 @@ namespace TarkovSdkGen.Processors
 
                 {
                     entity = "SkeletonRootJoint";
+                    var offset = _dumpParser.FindOffsetByName(className, entity);
+                    nestedStruct.AddOffset(entity, offset);
+                }
+
+                structGenerator.AddStruct(nestedStruct);
+            }
+
+            {
+                string name = "GamePlayerOwner";
+                SetVariableStatus(name);
+
+                StructureGenerator nestedStruct = new(name);
+
+                string entity;
+
+                const string className = "EFT.GamePlayerOwner";
+
+                {
+                    entity = "_myPlayer";
                     var offset = _dumpParser.FindOffsetByName(className, entity);
                     nestedStruct.AddOffset(entity, offset);
                 }
